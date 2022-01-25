@@ -8,14 +8,23 @@
 
 <body>
 
+  <span>Buscar por: </span>
   <select name="search-options">
     <option value="name">Nome</option>
     <option value="email">Email</option>
     <option value="id">ID</option>
   </select>
 
-  <input type="text">
-  
+  <input id="search-input" type="text">
+
+  <div id="container-inputs" style="display: inline; margin-left: 50px">
+    Registrar Cliente:
+    <label for="register-input-name" style="margin-left: 20px;">Nome</label> <input id="register-input-name" type="text">
+    <label for="register-input-email" style="margin-left: 20px;">Email</label> <input id="register-input-email" type="text">
+    <button onclick="register()">Cadastrar cliente</button>
+    <label for="id-delete" style="margin-left: 20px;">Deletar (digite a ID)</label> <input id='id-delete' type="number"> <button onclick="deleteClient()">Deletar</button>
+  </div>
+
   <div id="response"></div>
   <table id="list-search" style="width: 500px;"></table>
 

@@ -1,5 +1,11 @@
-var express = require('express')
-var app = express()
+const express = require('express')
+const app = express()
+const bodyParser = require("body-parser");
+
+// app.use(express.json());
+// app.use(express.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 const clients = [
   {"id": 1,
@@ -74,6 +80,28 @@ app.get('/clients', function (req, res) {
     res.send(searchClients)
   }
 
+})
+
+app.post('/register', function(req, res) {
+  res.sendStatus(201);
+  req.body.id = clients.at(-1).id + 1
+  clients.push(req.body)
+  console.log(clients)
+})
+
+app.delete('/delete', function(req, res) {
+  let id = req.body.idToDelete
+  let idExists = false
+
+  clients.forEach( (client, index) => {
+    if ( client.id == id) {
+      idExists = true
+      clients.splice(index, 1)
+    }
+  })
+
+  idExists ? res.sendStatus(202) : res.sendStatus(409);
+  console.log(clients)
 })
 
 app.listen(3000, () => {

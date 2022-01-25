@@ -1,12 +1,12 @@
 {
   "name": "myapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "Veja um demostração da aplicação rodando localmente neste vídeo: <a href=\"https://youtu.be/pdrspYIJROo\" target=\"_blank\">Link</a>",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.19.1",
     "express": "^4.17.2"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
