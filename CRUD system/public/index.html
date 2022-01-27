@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema CRUD de produtos</title>
+</head>
+<body>
+    <main>
+        <label for="input-search-or-delete">ID</label>
+        <input id="input-search-or-delete" type="number">
+        <button id="search-btn" onclick="search()">Consultar</button>
+        <button id="delete-btn" onclick="del()">Deletar</button>
+
+        <div style="display: inline; margin-left: 100px;">
+            <span>Registrar produto:</span>
+
+            <label for="input-name-register" style="margin-left: 30px;">Nome</label>
+            <input id="input-name-register" type="text">
+
+            <label for="input-id-register" style="margin-left: 30px;">ID</label>
+            <input id="input-id-register" type="number">
+
+            <button id="register-btn" onclick="register()">Registrar</button>
+            <button id="update-btn" onclick="update()">Atualizar ID</button>
+        </div>
+
+        <div id="response" style="margin: 20px;"></div>
+        <table id="result-list" style="width: 200px; text-align: center; margin: 20px;"></table>
+    </main>
+
+<script src="script.js"></script>
+</body>
+</html>
